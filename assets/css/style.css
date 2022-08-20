@@ -1,0 +1,64 @@
+/* *{
+    outline: dashed red;
+} */
+/* #formGroup{
+    display: flex;
+    flex-direction: column;
+} */
+body{
+    background: linear-gradient(to bottom right, white, lightgray);
+    height: 100vh;
+}
+header{
+    border: solid black 2px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, rgba(30, 143, 255, 0.3),rgba(30, 143, 255, 0.7)); 
+}
+
+#wordDisplayDiv{
+    height: 100px;
+}
+
+#definitionDiv{
+    border: solid black 2px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, rgba(30, 143, 255, 0.3),rgba(30, 143, 255, 0.7)); 
+}
+
+#historyUl{
+    list-style-type: none;
+}
+li{
+    border-radius: 5px;
+    margin: 2px;
+    cursor: pointer;
+    background: linear-gradient(to bottom right, rgba(211, 211, 211, 0.3), rgba(211, 211, 211, 0.7))
+}
+
+footer{
+    border: solid black 2px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom right, rgba(30, 143, 255, 0.3),rgba(30, 143, 255, 0.7)); 
+}
+
+a{
+    color: black;
+    margin: 0 1% 0 1%;
+}
+
+@media screen and (max-width: 767px) {
+    #leftBigColumn{
+        margin: 1% 0 1% 0;
+        border-bottom: solid black 2px;
+    }
+    #rightBigColumn{
+        margin-top: 1%;
+        margin-bottom: 1%;
+    }    
+}
+
+@media screen and (min-width: 768px) {
+    #leftBigColumn{
+        border-right: solid black 2px;
+    }
+}
