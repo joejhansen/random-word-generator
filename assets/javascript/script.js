@@ -3,7 +3,7 @@ const historyUl = document.getElementById("historyUl")
 const wordDisplay = document.getElementById("wordDisplay")
 const definitionDiv = document.getElementById("definitionDiv")
 const generateBtn = document.getElementById("generateBtn")
-var wordList = ["theater", "doctor", "park", "hospital"]
+var wordList = []
 var apiURL = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
 function addWordToList(event) {
