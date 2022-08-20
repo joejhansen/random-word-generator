@@ -18,6 +18,7 @@ function addWordToList(event) {
                         // console.log(data)
                         var partOfSpeech = data[0].meanings[0].partOfSpeech
                         var definition = data[0].meanings[0].definitions[0].definition
+                        thisWord = thisWord.toLowerCase()
                         wordDisplay.textContent = thisWord
                         definitionDiv.innerHTML = "<p>" + partOfSpeech + "</p><p>" + definition + "</p>"
                         if (wordList.includes(thisWord)) {
@@ -28,13 +29,14 @@ function addWordToList(event) {
                             localStorage.setItem("wordsList", saveThis)
                         }
                         var newLi = document.createElement("li")
-                        newLi.textContent = thisWord
+                        newLi.innerHTML = thisWord
                         historyUl.appendChild(newLi)
                         // console.log(wordList)
                     });
 
             } else {
-                console.log("error")
+                wordDisplay.textContent = "error"
+                definitionDiv.innerHTML = "<p>oops</p><p>please enter a valid word</p>"
                 return
             }
         })
@@ -53,7 +55,8 @@ function showWordDefinition(event) {
                         // console.log(data)
                         var partOfSpeech = data[0].meanings[0].partOfSpeech
                         var definition = data[0].meanings[0].definitions[0].definition
-                        wordDisplay.textContent = thisWord
+                        thisWord = thisWord.toLowerCase()
+                        wordDisplay.textContent = thisWord.toLowerCase()
                         definitionDiv.innerHTML = "<p>" + partOfSpeech + "</p><p>" + definition + "</p>"
                         if (wordList.includes(thisWord)) {
                             return
@@ -66,7 +69,8 @@ function showWordDefinition(event) {
                     });
 
             } else {
-                console.log("error")
+                wordDisplay.textContent = "error"
+                definitionDiv.innerHTML = '<p>oops</p><p>the free dictionary API might not be working.</p><p>check under "network" using dev tools</p>'
                 return
             }
         })
@@ -110,7 +114,7 @@ function init() {
     }
     wordList.forEach(function (number) {
         var newLi = document.createElement("li")
-        newLi.textContent = number
+        newLi.innerHTML = number
         historyUl.appendChild(newLi)
     })
 }
