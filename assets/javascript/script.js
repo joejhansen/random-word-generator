@@ -3,6 +3,8 @@ const historyUl = document.getElementById("historyUl")
 const wordDisplay = document.getElementById("wordDisplay")
 const definitionDiv = document.getElementById("definitionDiv")
 const generateBtn = document.getElementById("generateBtn")
+const holdRow = document.getElementById("holdRow")
+const holdBtn = document.getElementById("holdBtn")
 var wordList = []
 var apiURL = "https://api.dictionaryapi.dev/api/v2/entries/en/"
 
@@ -58,13 +60,6 @@ function showWordDefinition(event) {
                         thisWord = thisWord.toLowerCase()
                         wordDisplay.textContent = thisWord.toLowerCase()
                         definitionDiv.innerHTML = "<p>" + partOfSpeech + "</p><p>" + definition + "</p>"
-                        if (wordList.includes(thisWord)) {
-                            return
-                        } else {
-                            wordList.push(thisWord)
-                            var saveThis = JSON.stringify(wordList)
-                            localStorage.setItem("wordsList", saveThis)
-                        }
                         // console.log(wordList)
                     });
 
@@ -102,6 +97,23 @@ function showRandomWord() {
 }
 
 generateBtn.addEventListener("click", showRandomWord)
+
+function saveWord(event){
+    console.log(event.target)
+    if (event.target.getAttribute("class") === "deleteBtn"){
+        console.log("it's working")
+
+    }
+}
+
+holdRow.addEventListener("click", saveWord)
+
+function holdWord(event){
+    console.log("it's listening")
+    console.log(wordDisplay.textContent)
+}
+
+holdBtn.addEventListener("click", holdWord)
 
 function init() {
     var localWords = localStorage.getItem("wordsList")

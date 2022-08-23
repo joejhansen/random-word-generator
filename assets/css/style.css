@@ -45,8 +45,13 @@ a{
     color: black;
     margin: 0 1% 0 1%;
 }
-.xOut{
-    justify-content: flex-end;
+
+.deleteBtn{
+    cursor: pointer
+}
+
+#holdRow{
+    margin-top: 1%;
 }
 
 @media screen and (max-width: 767px) {
